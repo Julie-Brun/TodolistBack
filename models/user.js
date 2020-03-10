@@ -5,6 +5,15 @@ let userSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'List'
     }],
+    // Pour mettre un rôle admin 
+    role: {
+        enum : [
+            1,
+            2
+        ],
+        type: 'number',
+        default: 1
+    },
     name: {
         type: 'string',
         required: 'You need to specifie a name'
